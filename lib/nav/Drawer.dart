@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import '../screen/Bluetooth.dart';
 import '../screen/MapsPage.dart';
 import '../screen/HomePage.dart';
+import '../screen/GeolocPage.dart';
 
 class DrawerOnly extends StatelessWidget {
   @override
-  Widget build (BuildContext ctxt) {
+  Widget build (BuildContext context) {
     return new Drawer(
         child: new ListView(
           children: <Widget>[
@@ -18,25 +19,33 @@ class DrawerOnly extends StatelessWidget {
             new ListTile(
               title: new Text("HomePage"),
               onTap: () {
-                Navigator.pop(ctxt);
-                Navigator.push(ctxt,
-                    new MaterialPageRoute(builder: (ctxt) => new HomePage()));
+                Navigator.push(context,
+                    new MaterialPageRoute(builder: (context) => new HomePage()));
+               // Navigator.pop(context);
               },
             ),
             new ListTile(
               title: new Text("Bluetooth"),
               onTap: () {
-                Navigator.pop(ctxt);
-                Navigator.push(ctxt,
-                    new MaterialPageRoute(builder: (ctxt) => new BluetoothPage()));
+               //Navigator.pop(context);
+                Navigator.push(context,
+                    new MaterialPageRoute(builder: (context) => new BluetoothPage()));
               },
             ),
             new ListTile(
               title: new Text("Maps"),
               onTap: () {
-                Navigator.pop(ctxt);
-                Navigator.push(ctxt,
-                    new MaterialPageRoute(builder: (ctxt) => new MapsPage()));
+               // Navigator.pop(context);
+                Navigator.push(context,
+                    new MaterialPageRoute(builder: (context) => new MapsPage()));
+              },
+            ),
+            new ListTile(
+              title: new Text("Geoloc"),
+              onTap: () {
+                //Navigator.pop(context);
+                Navigator.push(context,
+                    new MaterialPageRoute(builder: (context) => new GeolocPage()));
               },
             ),
           ],
